@@ -12,6 +12,9 @@ public class TestDevOpsApp10
     /**
      * Rigorous Test :-)
      */
+	
+	String devOpsTitle = "DevOps";
+	
     @Test
     public void shouldAnswerWithTrue()
     {
@@ -22,5 +25,12 @@ public class TestDevOpsApp10
         //Change for Cascade Delete, again
         //Change For validation of PipelineUI Tests
         assertTrue( true );
+    }
+    
+    @Test
+    public void validateAddMethods()
+    {
+        assertTrue( true );
+        assertTrue(devOpsTitle.equals("DevOps"));
     }
 }
