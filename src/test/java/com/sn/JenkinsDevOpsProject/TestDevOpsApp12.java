@@ -33,20 +33,20 @@ public class TestDevOpsApp12
     public void validateAddMethod1()
     {
         assertTrue( true );
-        assertEquals(devOpsTitle.equals("DevOps"));
+        assertTrue(devOpsTitle.equals("DevOps"));
     }
     
     @Test
     public void validateAddMethods2()
     {
         assertTrue( true );
-        assertEquals(devOpsTitle.equals("DevOps"));
+        assertTrue(devOpsTitle.equals("DevOps"));
     }
     
     @Test
     public void validateAddMethods3()
     {
         assertTrue( true );
-        assertEquals(devOpsTitle.equals("DevOps"));
+        assertTrue(devOpsTitle.equals("DevOps"));
     }
 }
