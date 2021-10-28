@@ -1,6 +1,7 @@
 package com.sn.TestSNOWPolarisUIRepo;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -29,21 +30,21 @@ public class TestDevOpsApp12
     
     
     @Test
-    public void validateAddMethods()
+    public void validateAddMethod1()
     {
         assertTrue( true );
         assertEquals(devOpsTitle.equals("DevOps"));
     }
     
     @Test
-    public void validateAddMethods()
+    public void validateAddMethods2()
     {
         assertTrue( true );
         assertEquals(devOpsTitle.equals("DevOps"));
     }
     
     @Test
-    public void validateAddMethods()
+    public void validateAddMethods3()
     {
         assertTrue( true );
         assertEquals(devOpsTitle.equals("DevOps"));
