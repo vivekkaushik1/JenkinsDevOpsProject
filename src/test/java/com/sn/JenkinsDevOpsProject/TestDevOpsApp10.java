@@ -3,6 +3,7 @@ package com.sn.TestSNOWPolarisUIRepo;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * Unit test for simple App.
@@ -28,6 +29,7 @@ public class TestDevOpsApp10
     }
     
     @Test
+    @Ignore
     public void validateAddMethods()
     {
         assertTrue( true );

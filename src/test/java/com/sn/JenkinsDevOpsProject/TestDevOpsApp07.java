@@ -12,7 +12,7 @@ public class TestDevOpsApp07
     /**
      * Rigorous Test :-)
      */
-    @Test
+    //@Test
     public void shouldAnswerWithTrue()
     {
         //new change

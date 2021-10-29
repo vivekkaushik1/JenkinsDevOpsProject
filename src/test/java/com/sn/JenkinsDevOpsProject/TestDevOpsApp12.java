@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.junit.Ignore;
 
 /**
  * Unit test for simple App.
@@ -32,11 +33,12 @@ public class TestDevOpsApp12
     @Test
     public void validateAddMethod1()
     {
-        assertTrue( true );
+        assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
     
     @Test
+    @Ignore
     public void validateAddMethods2()
     {
         assertTrue( true );
@@ -46,7 +48,7 @@ public class TestDevOpsApp12
     @Test
     public void validateAddMethods3()
     {
-        assertTrue( true );
+        assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
 }
