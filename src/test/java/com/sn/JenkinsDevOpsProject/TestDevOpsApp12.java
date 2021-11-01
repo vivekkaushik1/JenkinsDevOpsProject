@@ -33,7 +33,6 @@ public class TestDevOpsApp12
     @Test
     public void validateAddMethod1()
     {
-
         // assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
