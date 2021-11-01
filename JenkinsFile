@@ -1,10 +1,10 @@
-def artifactname = "JenkinsDevOpsProject-0.0.1-SNAPSHOT.jar"
+def artifactname = "JenkinsDevOpsProject-0.0.1-SNAPSHOT-release-devops-1.33_.jar"
 def repoName = "JenkinsDevOpsProject"
-def pipelineName = "SunilDevOps-Pipeline"
+def pipelineName = "SunilDevOps-Multibranch-Project"
 def semanticVersion = "${env.BUILD_NUMBER}.0.0"
-def packageName = "JenkinsDevOpsProject-package_${env.BUILD_NUMBER}"
+def packageName = "JenkinsDevOpsProject-package_release-devops-1.33_${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
-def pkgName = "JenkinsDevOpsProject-package"
+def pkgName = "JenkinsDevOpsProject-package_release-devops-1.33_"
 
 pipeline {
   agent any
