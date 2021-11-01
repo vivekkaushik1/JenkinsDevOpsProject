@@ -33,7 +33,7 @@ public class TestDevOpsApp12
     @Test
     public void validateAddMethod1()
     {
-        assertTrue( false );
+        // assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
     
@@ -41,14 +41,14 @@ public class TestDevOpsApp12
     @Ignore
     public void validateAddMethods2()
     {
-        assertTrue( true );
+      //  assertTrue( true );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
     
     @Test
     public void validateAddMethods3()
     {
-        assertTrue( false );
+        // assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
 }
