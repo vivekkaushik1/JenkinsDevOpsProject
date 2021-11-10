@@ -9,7 +9,7 @@ import org.junit.Ignore;
 /**
  * Unit test for simple App.
  */
-public class TestDevOpsApp20
+public class TestDevOpsApp28
 {
     /**
      * Rigorous Test :-)
