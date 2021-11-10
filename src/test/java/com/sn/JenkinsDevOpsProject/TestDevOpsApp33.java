@@ -12,7 +12,7 @@ public class TestDevOpsApp01
     /**
      * Rigorous Test :-)
      */
-  @Test public void validateAddMethod1()    {   assertTrue(devOpsTitle.equals("DevOps"));}
+@Test public void validateAddMethod1()    {   assertTrue(devOpsTitle.equals("DevOps"));}
 @Test public void validateAddMethod2()    {   assertTrue(devOpsTitle.equals("DevOps"));}
 @Test public void validateAddMethod3()    {   assertTrue(devOpsTitle.equals("DevOps"));}
 @Test public void validateAddMethod4()    {   assertTrue(devOpsTitle.equals("DevOps"));}
