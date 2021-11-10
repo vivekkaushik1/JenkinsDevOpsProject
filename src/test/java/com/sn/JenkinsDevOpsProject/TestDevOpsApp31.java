@@ -157,4 +157,74 @@ public class TestDevOpsApp31
        // assertTrue( false );
         assertTrue(devOpsTitle.equals("DevOps"));
     }
+	@Test
+    public void validateAddMethod21()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    @Ignore
+    public void validateAddMethods22()
+    {
+        assertTrue( true );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethods23()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod24()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod25()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod26()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod27()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod28()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod29()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
+    
+    @Test
+    public void validateAddMethod30()
+    {
+       // assertTrue( false );
+        assertTrue(devOpsTitle.equals("DevOps"));
+    }
 }
