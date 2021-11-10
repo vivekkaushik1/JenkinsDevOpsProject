@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Unit test for simple App.
  */
-public class TestDevOpsApp01
+public class TestDevOpsApp22
 {
     /**
      * Rigorous Test :-)
