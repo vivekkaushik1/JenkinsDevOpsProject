@@ -1,0 +1,11 @@
+#!/bin/bash
+echo hello world
+x=1
+while [ $x -le 100000000 ]
+do
+  echo "Welcome $x times"
+  git push
+  sleep 30.0
+  x=$(( $x + 1 ))
+done
+
