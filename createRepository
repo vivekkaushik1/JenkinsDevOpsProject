@@ -1,0 +1,18 @@
+x=1
+j=31111
+string= $((j+x))
+while [ $x -le 1 ]
+do
+ curl -H "Authorization: token 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" --data '{"name":"Per_Repo-'$((j+x))'"}'  https://api.github.com/user/repos
+ git clone https://github.com/vivekkaushik1/Per_Repo-$((j+x)).git
+ echo cloning is done
+ eval "$string"
+ cp branchCreate.sh createCOmmit.sh  Per_Repo-$((j+x))/
+ cd Per_Repo-$((j+x)) 
+ git add .
+ git commit -m "SSS"
+ git push 
+ x=$[$x+1]
+ sh ./branchCreate.sh
+ cd ..
+done
