@@ -32,11 +32,84 @@ pipeline {
              }
            }
        }
+       stage('ITTest') {
+          steps {
+                echo "ITTest.."
+                snDevOpsArtifact(artifactsPayload:"""{"artifacts": [
+                    {"name": "demo1.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo1"},
+                    {"name": "demo2.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo2"},
+                    {"name": "demo3.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo3"},
+                    {"name": "demo4.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo4"},
+                    {"name": "demo5.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo5"}]}""")
+                }
+          
+       }       
+        stage('UnitTest') {
+          steps {
+                echo "UnitTest.."
+                snDevOpsArtifact(artifactsPayload:"""{"artifacts": [
+                    {"name": "demo1.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo1"},
+                    {"name": "demo2.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo2"},
+                    {"name": "demo3.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo3"},
+                    {"name": "demo4.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo4"},
+                    {"name": "demo5.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo5"}]}""")
+                }
+          
+       } 
+       stage('CodeCoverage') {
+           steps {
+              
+               sonarTest()'
+           }
+
+       }       
+     stage("Create Artifact for prod") {
+           steps {
+              echo "Creating artifact"
+              sh 'mvn package'
+              sleep 3
+              snDevOpsArtifact(artifactsPayload:"""
+               {"artifacts": 
+                  [
+                     {
+                        "name": "JenkinsDevOpsProject-mvp.jar",
+                        "version":"0.${env.BUILD_NUMBER}.0",
+                        "semanticVersion": "0.${env.BUILD_NUMBER}.0",
+                        "repositoryName": "JenkinsDevOpsProject"
+                       }
+                    ]
+                 }""")
+              snDevOpsPackage(name: "JenkinsDevOpsProject-package", artifactsPayload: """
+              {"artifacts": 
+               [
+                  {
+                     "name": "JenkinsDevOpsProject-mvp.zip",
+                     "repositoryName": "JenkinsDevOpsProject",
+                     "pipelineName": "SunilPipeline",
+                     "taskExecutionNumber":"${env.BUILD_NUMBER}",
+                     "stageName":"Create Artifact for prod",
+                     "branchName": "main"
+                   }
+                 ]
+                }""")
+           }
+        }
+        stage("Prod") {
+            steps {
+            	echo "Prod deploy..."
+                snDevOpsPackage(name: "${packageName}", artifactsPayload: """{"artifacts": [
+                    {"name": "demo1.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo1"},
+                    {"name": "demo2.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo2"},
+                    {"name": "demo3.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo3"},
+                    {"name": "demo4.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo4"},
+                    {"name": "demo5.jar","version": "${version}","semanticVersion": "${semanticVersion}","repositoryName": "demo5"}]}""")
+            }
+        }
        stage('Deploy') {
             steps {
 
                 echo 'Deploying the change....'
-                //snDevOpsChange()
+                snDevOpsChange()
 
                 //snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"master"}""")
                 //snDevOpsPackage(name: "${pkgName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName":"master"}""")
