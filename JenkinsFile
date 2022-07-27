@@ -59,7 +59,7 @@ pipeline {
        stage('CodeCoverage') {
            steps {
               
-               sonarTest()'
+               sonarTest()
            }
 
        }       
